@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9d386d4-2e70-48f5-a917-d82af5067403" name="Default Changelist" comment="HepsiEmlak uygulamasında Retrofit,Dagger-Hilt,Navigation Component,Room Database ve Glide kullanılarak ürün listesi oluşturuldu.Ürün sepeti oluşturuldu.Ürün ekleme ve ürün listeme işlemi yapıldı.Ürün sepeti geliştirilmeye devam edilmektedir.">
+    <list default="true" id="b9d386d4-2e70-48f5-a917-d82af5067403" name="Default Changelist" comment="Listing and basket processes of the application are completed. Adding deletion and deleting the product completely are completed.">
       <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileChanges/last-build.bin" afterDir="false" />
@@ -25,13 +25,16 @@
       <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/adapter/ProductBasketAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/adapter/ProductBasketAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/fragments/ProductBasketFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/fragments/ProductBasketFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/fragments/ProductListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/view/fragments/ProductListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/viewModel/ProductBasketViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/viewModel/ProductBasketViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/viewModel/ProductListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/viewModel/ProductListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/product_basket_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/product_basket_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/db/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/enes/hepsiemlak/db/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,10 +114,10 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -224,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648365122850</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Listing and basket processes of the application are completed. Adding deletion and deleting the product completely are completed.">
+      <created>1648373357597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648373357597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +251,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HepsiEmlak uygulamasında Retrofit,Dagger-Hilt,Navigation Component,Room Database ve Glide kullanılarak ürün listesi oluşturuldu.Ürün sepeti oluşturuldu.Ürün ekleme ve ürün listeme işlemi yapıldı.Ürün sepeti geliştirilmeye devam edilmektedir." />
-    <option name="LAST_COMMIT_MESSAGE" value="HepsiEmlak uygulamasında Retrofit,Dagger-Hilt,Navigation Component,Room Database ve Glide kullanılarak ürün listesi oluşturuldu.Ürün sepeti oluşturuldu.Ürün ekleme ve ürün listeme işlemi yapıldı.Ürün sepeti geliştirilmeye devam edilmektedir." />
+    <MESSAGE value="Listing and basket processes of the application are completed. Adding deletion and deleting the product completely are completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Listing and basket processes of the application are completed. Adding deletion and deleting the product completely are completed." />
   </component>
 </project>

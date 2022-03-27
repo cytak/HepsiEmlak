@@ -1,19 +1,27 @@
 buildscript {
-    ext.kotlin_version = "1.5.0"
+    ext.kotlin_version = "1.6.10"
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "com.android.tools.build:gradle:4.2.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5")
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.39.1'
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1")
     }
 }
 
 ext{
-    roomVersion = '2.3.0'
+    roomVersion = '2.4.2'
+    lifecycle = '2.4.1'
+    navigation = '2.4.1'
+    glide = '4.13.1'
+    retrofit = '2.9.0'
+    dagger = '2.41'
+    multidex = '1.0.3'
+    coroutines_android = '1.5.2'
+    coroutines_core = '1.5.1'
 }
 
 allprojects {

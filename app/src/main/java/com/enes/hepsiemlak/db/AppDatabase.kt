@@ -9,7 +9,7 @@ import com.enes.hepsiemlak.db.entity.ProductEntity
 @Database(
     version = 2,
     entities = [ProductEntity::class],
-    exportSchema = true
+    exportSchema = false
 )
 abstract class AppDatabase :RoomDatabase(){
 
