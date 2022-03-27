@@ -63,8 +63,10 @@ class ProductListViewModel @Inject constructor(
                 return DataHandler.SUCCESS("Success")
             }
         }
-//        if(response.code() == 404)
-        return DataHandler.ERROR(message = response.errorBody().toString())
+        val message =  if (response.code() == 404)
+            "There is no product in stock."
+        else response.errorBody().toString()
+        return DataHandler.ERROR(message = message)
     }
 
 

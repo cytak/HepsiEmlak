@@ -11,8 +11,10 @@ import com.enes.hepsiemlak.databinding.FragmentProductBasketBinding
 import com.enes.hepsiemlak.model.Product
 import com.enes.hepsiemlak.utils.DataHandler
 import com.enes.hepsiemlak.utils.logData
+import com.enes.hepsiemlak.utils.observeOnce
 import com.enes.hepsiemlak.view.adapter.ProductBasketAdapter
 import com.enes.hepsiemlak.viewModel.ProductBasketViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -31,7 +33,7 @@ class ProductBasketFragment : Fragment(R.layout.fragment_product_basket) {
         binding = FragmentProductBasketBinding.bind(view)
         setUpRecyclerView()
 
-        viewModel.product.observe(viewLifecycleOwner) { dataHandler ->
+        viewModel.productList.observe(viewLifecycleOwner) { dataHandler ->
             when (dataHandler) {
                 is DataHandler.SUCCESS -> {
                     productBasketAdapter.differ.submitList(dataHandler.data)
@@ -46,6 +48,28 @@ class ProductBasketFragment : Fragment(R.layout.fragment_product_basket) {
             }
         }
 
+
+        viewModel.sellProduct.observe(viewLifecycleOwner) { dataHandler ->
+            when (dataHandler) {
+                is DataHandler.SUCCESS -> {
+                    dataHandler.data?.let {
+                        Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
+                    }
+                    getProductPlusSearch()
+                }
+                is DataHandler.ERROR -> {
+                    dataHandler.message?.let {
+                        Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
+                    }
+                    logData("ProductPlus ERROR " + dataHandler.message)
+                }
+                is DataHandler.LOADING -> {
+                    logData("ProductPlus LOADING...")
+                }
+            }
+        }
+
+
         binding.basketListBackImage.setOnClickListener {
             onBackPressed()
         }
@@ -53,15 +77,38 @@ class ProductBasketFragment : Fragment(R.layout.fragment_product_basket) {
             onBackPressed()
         }
         productBasketAdapter.productAddClicked {
-            //TODO bu kısımda istek atılacak daha sonra ise veritabanına eklenecek
+            viewModel.sellProduct(product = it)
         }
         productBasketAdapter.productDeleteClicked {
-
+            getProductMinusSearch(it)
         }
         productBasketAdapter.productRemoveClicked {
             viewModel.deleteProduct(product = it)
         }
     }
+
+    private fun getProductPlusSearch() {
+        viewModel.getProductPlusSearch().observeOnce(viewLifecycleOwner){
+            when(it){
+                is DataHandler.SUCCESS ->{
+                    it.data?.let { it1 -> viewModel.insertProduct(it1) }
+                }
+            }
+        }
+    }
+    private fun getProductMinusSearch(product: Product) {
+        viewModel.getProductMinusSearch(product.productId).observeOnce(viewLifecycleOwner){
+            when(it){
+                is DataHandler.SUCCESS ->{
+                    if (it.data?.amount == 0)
+                        viewModel.deleteProduct(product = it.data)
+                    else
+                        it.data?.let { it1 -> viewModel.insertProduct(product = it1) }
+                }
+            }
+        }
+    }
+
     private fun setUpRecyclerView() {
         binding.basketRecyclerView.apply {
             adapter = productBasketAdapter

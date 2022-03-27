@@ -40,6 +40,7 @@ class ProductBasketAdapter @Inject constructor() : RecyclerView.Adapter<ProductB
             basketProductImage.loadImageFromGlide(product.imageUrl)
             basketProductTitleTxt.text = product.name
             basketProductPriceTxt.text = "${product.price} ${product.currency}"
+            basketProductSumPriceTxt.text = "Sum : ${product.price.toFloat()*product.amount} ${product.currency}"
             basketProductCount.setText(product.amount.toString())
         }
         holder.binding.basketAddBtn.setOnClickListener {

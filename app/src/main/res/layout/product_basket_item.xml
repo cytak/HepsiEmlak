@@ -99,6 +99,21 @@
         tools:text="1234 TL" />
 
     <TextView
+        android:id="@+id/basketProductSumPriceTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16dp"
+        android:layout_marginLeft="@dimen/space_16dp"
+        android:layout_marginTop="@dimen/space_16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLines="1"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/basketProductPriceTxt"
+        app:layout_constraintTop_toBottomOf="@id/basketProductTitleTxt"
+        tools:text="1234 TL" />
+
+    <TextView
         android:id="@+id/basketRemoveProduct"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

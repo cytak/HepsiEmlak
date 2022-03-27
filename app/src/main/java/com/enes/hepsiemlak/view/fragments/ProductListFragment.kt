@@ -60,7 +60,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
                     dataHandler.data?.let {
                         Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
                     }
-                    getProductSearch()
+                    getProductPlusSearch()
                 }
                 is DataHandler.ERROR -> {
                     dataHandler.message?.let {
@@ -76,7 +76,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
     }
 
-    private fun getProductSearch() {
+    private fun getProductPlusSearch() {
         viewModel.getProductSearch().observeOnce(viewLifecycleOwner){
             when (it) {
                 is DataHandler.SUCCESS -> {
