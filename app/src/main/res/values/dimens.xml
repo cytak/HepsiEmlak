@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="toolbar_size">56dp</dimen>
+    <dimen name="space_30dp">30dp</dimen>
+    <dimen name="large_font">17sp</dimen>
+    <dimen name="medium_font">15sp</dimen>
+    <dimen name="elevation">8dp</dimen>
+</resources>

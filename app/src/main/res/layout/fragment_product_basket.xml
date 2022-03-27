@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.ProductBasketFragment">
+
+    <RelativeLayout
+        android:id="@+id/basketListToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_size"
+        android:elevation="10dp"
+        android:background="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/basketListBackImage"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_left"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/space_30dp"
+            android:layout_marginEnd="@dimen/space_16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/shopping_cart"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/large_font"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:background="@color/gray" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/basketRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/space_8dp"
+        android:layout_marginLeft="@dimen/space_8dp"
+        android:layout_marginEnd="@dimen/space_8dp"
+        android:layout_marginRight="@dimen/space_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/basketListToolbar"
+        tools:listitem="@layout/product_basket_item" />
+
+
+    <LinearLayout
+        android:id="@+id/basketOrderLyt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_size"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:weightSum="2"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/basketContinueBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8dp"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_left"
+            android:drawableTint="@color/text_color_black"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/continue_shopping"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/medium_font"
+            android:elevation="@dimen/elevation"
+            android:background="@drawable/button_white_background"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/basketPlaceOrderBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/place_order"
+            android:textAllCaps="false"
+            android:background="@drawable/button_background"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_font" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
